@@ -6,7 +6,7 @@ import emailjs from '@emailjs/browser'
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import L from 'leaflet'
-import customIconUrl from '../../assets/images/location-pin-icon.png';
+import customIconUrl from '../../assets/images/location-pin-icon.png'
 
 const Contact = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
@@ -24,9 +24,14 @@ const Contact = () => {
     e.preventDefault()
 
     emailjs
-      .sendForm('service_2vk1jnd', 'template_86c06t9', refForm.current, {
-        publicKey: 'G3rLFiM85KA9m2WSf',
-      })
+      .sendForm(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        refForm.current,
+        {
+          publicKey: process.env.REACT_APP_EMAILJS_PUBLIC_KEY,
+        }
+      )
       .then(
         () => {
           alert('Message successfully sent!')

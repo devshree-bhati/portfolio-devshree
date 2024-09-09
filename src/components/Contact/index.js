@@ -4,6 +4,9 @@ import AnimatedLetters from '../AnimatedLetters'
 import { useEffect, useRef, useState } from 'react'
 import emailjs from '@emailjs/browser'
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
+import 'leaflet/dist/leaflet.css'
+import L from 'leaflet'
+import customIconUrl from '../../assets/images/location-pin-icon.png';
 
 const Contact = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
@@ -36,6 +39,13 @@ const Contact = () => {
       )
   }
 
+  const customIcon = new L.Icon({
+    iconUrl: customIconUrl,
+    iconSize: [35, 35],
+    iconAnchor: [16, 32],
+    popupAnchor: [0, -32],
+  })
+
   return (
     <>
       <div className="container contact-page">
@@ -48,9 +58,9 @@ const Contact = () => {
             />
           </h1>
           <p>
-            I am interested in freelance opportunities - especially on ambitious
-            or large projects. However, if you have any other requests or
-            questions, don't hesitate to contact me using below form either.
+            I'd love to hear from you! Whether you have a project in mind, a
+            question, or just want to connect, feel free to reach out. Let's
+            explore how we can work together to create something amazing!
           </p>
           <div className="contact-form">
             <form ref={refForm} onSubmit={sendEmail}>
@@ -84,22 +94,28 @@ const Contact = () => {
             </form>
           </div>
         </div>
-        <div className="info-map">
-          Slobodan Gajic,
+
+        {/* <div className="info-map">
+          508B, SDC Anand Primes
           <br />
-          Serbia,
+          Haldi Ghati Gate
           <br />
-          Branka RadiCevica 19, 22000 <br />
-          Sremska Mitrovica <br />
-          <span>freelancerslobodan@gmail.com</span>
-        </div>
+          Sector - 8, Pratap Nagar,
+          <br />
+          Jaipur, 22000 <br />
+          Rajasthan <br />
+          India <br />
+          <span>devshreebhati10@gmail.com</span>
+        </div> */}
+
         <div className="map-wrap">
-          <MapContainer center={[44.96366, 19.61045]} zoom={13}>
-            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png">
-              <Marker position={[44.96366, 19.61045]}>
-                <Popup>Sloba lives here, come over for a cup of coffee</Popup>
-              </Marker>
-            </TileLayer>
+          <MapContainer center={[26.803588, 75.809526]} zoom={20}>
+            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"></TileLayer>
+            <Marker position={[26.803588, 75.809526]} icon={customIcon}>
+              <Popup>
+                Devshree's place - drop by for a chat or a cup of coffee!
+              </Popup>
+            </Marker>
           </MapContainer>
         </div>
       </div>

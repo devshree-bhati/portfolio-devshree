@@ -3,7 +3,6 @@ import LogoTitle from '../../assets/images/logo-d.png'
 import './index.scss'
 import { useEffect, useState } from 'react'
 import AnimatedLetters from '../AnimatedLetters'
-import Logo from './Logo'
 import Loader from 'react-loaders'
 
 const Home = () => {
@@ -32,6 +31,11 @@ const Home = () => {
   //     }, 4000)
   // }, [])
 
+  const handleDownload = () => {
+    const resumeUrl = '/resume.pdf'
+    window.open(resumeUrl, '_blank');
+  };
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setLetterClass('text-animate-hover')
@@ -39,6 +43,7 @@ const Home = () => {
 
     return () => clearTimeout(timer) // Cleanup function to clear the timeout
   }, [])
+
 
   return (
     <>
@@ -50,7 +55,7 @@ const Home = () => {
             <br />
             <span className={`${letterClass} _13`}>I</span>
             <span className={`${letterClass} _14`}>'m</span>
-            <img src={LogoTitle} alt="developer" />
+            <img src={LogoTitle} alt="developer" className="DLogo" />
             <AnimatedLetters
               letterClass={letterClass}
               strArray={nameArray}
@@ -63,12 +68,17 @@ const Home = () => {
               idx={22}
             />
           </h1>
-          <h2>Frontend Developer</h2>
-          <Link to="/contact" className="flat-button">
-            CONTACT ME
-          </Link>
+          <h2>Frontend Developer | Problem Solver</h2>
+          <p>Turning ideas into reality, one line of code at a time.</p>
+          <div className="button-container">
+            <Link to="/contact" className="flat-button">
+              CONTACT ME
+            </Link>
+            <button onClick={handleDownload} className="flat-button">
+              RESUME
+            </button>
+          </div>
         </div>
-        <Logo />
       </div>
 
       <Loader type="pacman" />

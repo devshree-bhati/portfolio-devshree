@@ -4,9 +4,9 @@ import { useEffect, useState } from 'react'
 import {
   faAngular,
   faCss3,
-  faGitAlt,
+  faGithub,
   faHtml5,
-  faJsSquare,
+  faJs,
   faReact,
 } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -35,18 +35,31 @@ const About = () => {
             />
           </h1>
           <p>
-            I'm a very ambitious front-end developer looking for a role in an
-            established IT company with the opportunity to work with the latest
-            technologies on challenging and diverse projects.
+            I'm Devshree, a dedicated Frontend Developer with a passion for
+            creating responsive and dynamic web applications. With a strong
+            foundation in React, Redux, and Angular, I excel in designing
+            user-centered experiences that are both functional and visually
+            engaging.
           </p>
           <p>
-            I'm quiet confident, naturally curious, and perpetually working on
-            improving my chops one design problem at a time.
+            My journey as a Computer Science and Engineering student has been
+            enriched by hands-on internships where I developed professional
+            websites, collaborated closely with senior developers, and honed my
+            skills in both frontend development and problem-solving. I also have
+            a solid grasp of core computer science subjects, which strengthens
+            my technical foundation and enhances my approach to complex
+            challenges.
           </p>
           <p>
-            If I need to define myself in one sentence that would be a family
-            person, father of a beautiful daughter, a sports fanatic,
-            photography enthusiast, and tech-obsessed!!!
+            I thrive on tackling complex algorithmic challenges and actively
+            engage in coding contests. By continually pushing the boundaries of
+            my problem-solving abilities, I stay at the forefront of
+            technological innovation and consistently enhance my skills.
+          </p>
+          <p>
+            Let's connect and collaborate on building efficient, interactive,
+            and scalable applications that address real-world problems and drive
+            meaningful impact.
           </p>
         </div>
 
@@ -59,16 +72,16 @@ const About = () => {
               <FontAwesomeIcon icon={faHtml5} color="#F06529" />
             </div>
             <div className="face3">
-              <FontAwesomeIcon icon={faCss3} color="#28A4D9" />
+              <FontAwesomeIcon icon={faJs} color="#28A4D9" />
             </div>
             <div className="face4">
               <FontAwesomeIcon icon={faReact} color="#5ED4F4" />
             </div>
             <div className="face5">
-              <FontAwesomeIcon icon={faJsSquare} color="#EFD81D" />
+              <FontAwesomeIcon icon={faCss3} color="#EFD81D" />
             </div>
             <div className="face6">
-              <FontAwesomeIcon icon={faGitAlt} color="#EC4D28" />
+              <FontAwesomeIcon icon={faGithub} color="#EC4D28" />
             </div>
           </div>
         </div>
